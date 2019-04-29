@@ -88,7 +88,7 @@ pipeline {
                         echo 'Hello world!' 
                     }
                 }
-                stage('Metrics') {
+                stage('Security') {
                     steps {
                         echo 'Hello world!' 
                     }
