@@ -20,11 +20,6 @@ pipeline {
                 }
                 stage('UPS') {
                     stages {
-                        stage('Operator') {
-                            steps {
-                                echo 'Hello world!' 
-                            }
-                        }
                         stage('Integration') {
                             steps {
                                 echo 'Hello world!' 
@@ -34,11 +29,6 @@ pipeline {
                 }
                 stage('SSO') {
                     stages {
-                        stage('Operator') {
-                            steps {
-                                echo 'Hello world!' 
-                            }
-                        }
                         stage('Integration') {
                             steps {
                                 echo 'Hello world!' 
@@ -48,11 +38,6 @@ pipeline {
                 }
                 stage('Metrics') {
                     stages {
-                        stage('Operator') {
-                            steps {
-                                echo 'Hello world!' 
-                            }
-                        }
                         stage('Integration') {
                             steps {
                                 echo 'Hello world!' 
@@ -62,11 +47,6 @@ pipeline {
                 }
                 stage('Sync') {
                     stages {
-                        stage('Operator') {
-                            steps {
-                                echo 'Hello world!' 
-                            }
-                        }
                         stage('Integration') {
                             steps {
                                 echo 'Hello world!' 
@@ -75,8 +55,12 @@ pipeline {
                     }
                 }
                 stage('Security') {
-                    steps {
-                        echo 'Hello world!' 
+                    stages {
+                        stage('Integration') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
                     }
                 }
             }
