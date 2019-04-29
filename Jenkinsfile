@@ -28,12 +28,31 @@ pipeline {
         }
         stage('Services') {
             parallel {
-                stage('Test On Windows') {
+                stage('UPS') {
+                    parallel {
+                        stage('Android') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('iOS') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                    }
+                }
+                stage('App RH SSO') {
                     steps {
                         echo 'Hello world!' 
                     }
                 }
-                stage('Test On Linux') {
+                stage('Metrics') {
+                    steps {
+                        echo 'Hello world!' 
+                    }
+                }
+                stage('Data Sync') {
                     steps {
                         echo 'Hello world!' 
                     }
