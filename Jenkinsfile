@@ -29,7 +29,7 @@ pipeline {
         stage('Services') {
             parallel {
                 stage('UPS') {
-                    parallel {
+                    stages {
                         stage('Android') {
                             steps {
                                 echo 'Hello world!' 
