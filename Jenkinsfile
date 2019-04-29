@@ -32,7 +32,7 @@ pipeline {
                         }
                     }
                 }
-                stage('App RH SSO') {
+                stage('SSO') {
                     stages {
                         stage('Operator') {
                             steps {
@@ -60,7 +60,7 @@ pipeline {
                         }
                     }
                 }
-                stage('Data Sync') {
+                stage('Sync') {
                     stages {
                         stage('Operator') {
                             steps {
@@ -74,7 +74,7 @@ pipeline {
                         }
                     }
                 }
-                stage('Device Security') {
+                stage('Security') {
                     steps {
                         echo 'Hello world!' 
                     }
@@ -83,7 +83,7 @@ pipeline {
         }
         stage('Services + Metrics') {
             parallel {
-                stage('App RH SSO') {
+                stage('SSO') {
                     steps {
                         echo 'Hello world!' 
                     }
@@ -93,7 +93,7 @@ pipeline {
                         echo 'Hello world!' 
                     }
                 }
-                stage('Data Sync') {
+                stage('Sync') {
                     steps {
                         echo 'Hello world!' 
                     }
