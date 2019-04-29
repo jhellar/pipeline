@@ -81,22 +81,8 @@ pipeline {
                 }
             }
         }
-        stage('Services') {
+        stage('Services + Metrics') {
             parallel {
-                stage('UPS') {
-                    stages {
-                        stage('Android') {
-                            steps {
-                                echo 'Hello world!' 
-                            }
-                        }
-                        stage('iOS') {
-                            steps {
-                                echo 'Hello world!' 
-                            }
-                        }
-                    }
-                }
                 stage('App RH SSO') {
                     steps {
                         echo 'Hello world!' 
@@ -114,5 +100,9 @@ pipeline {
                 }
             }
         }
+        stage('Showcase') {
+            steps {
+                echo 'Hello world!' 
+            }
     }
 }
