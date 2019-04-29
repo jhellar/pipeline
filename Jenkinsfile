@@ -1,17 +1,17 @@
 pipeline {
     agent none
     stages {
-        stage('MDC operator test') { steps { echo 'Hello world!' } }
+        stage('MDC operator tests') { steps { echo 'Hello world!' } }
         stage('Services tests') {
             parallel {
                 stage('MDC') {
                     stages {
-                        stage('API test') {
+                        stage('API tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
                         }
-                        stage('UI test') {
+                        stage('UI tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -20,12 +20,12 @@ pipeline {
                 }
                 stage('UPS') {
                     stages {
-                        stage('Operator test') {
+                        stage('Operator tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
                         }
-                        stage('Karma test') {
+                        stage('Karma tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -34,12 +34,12 @@ pipeline {
                 }
                 stage('SSO') {
                     stages {
-                        stage('Operator test') {
+                        stage('Operator tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
                         }
-                        stage('Appium test') {
+                        stage('Appium tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -48,12 +48,12 @@ pipeline {
                 }
                 stage('Metrics') {
                     stages {
-                        stage('Operator test') {
+                        stage('Operator tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
                         }
-                        stage('Karma test') {
+                        stage('Karma tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -62,12 +62,12 @@ pipeline {
                 }
                 stage('Sync') {
                     stages {
-                        stage('Operator test') {
+                        stage('Operator tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
                         }
-                        stage('Karma test') {
+                        stage('Karma tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -76,7 +76,7 @@ pipeline {
                 }
                 stage('Security') {
                     stages {
-                        stage('Karma test') {
+                        stage('Karma tests') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -87,17 +87,17 @@ pipeline {
         }
         stage('Services + Metrics tests') {
             parallel {
-                stage('SSO test') {
+                stage('SSO tests') {
                     steps {
                         echo 'Hello world!' 
                     }
                 }
-                stage('Security test') {
+                stage('Security tests') {
                     steps {
                         echo 'Hello world!' 
                     }
                 }
-                stage('Sync test') {
+                stage('Sync tests') {
                     steps {
                         echo 'Hello world!' 
                     }
