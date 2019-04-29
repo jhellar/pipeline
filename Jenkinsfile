@@ -2,24 +2,79 @@ pipeline {
     agent none
     stages {
         stage('MDC operator') { steps { echo 'Hello world!' } }
-        stage('Services operators') {
+        stage('Services') {
             parallel {
+                stage('MDC') {
+                    stages {
+                        stage('API') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('UI') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                    }
+                }
                 stage('UPS') {
-                    steps {
-                        echo 'Hello world!' 
+                    stages {
+                        stage('Operator') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('Integration') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
                     }
                 }
                 stage('App RH SSO') {
-                    steps {
-                        echo 'Hello world!' 
+                    stages {
+                        stage('Operator') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('Integration') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
                     }
                 }
                 stage('Metrics') {
-                    steps {
-                        echo 'Hello world!' 
+                    stages {
+                        stage('Operator') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('Integration') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
                     }
                 }
                 stage('Data Sync') {
+                    stages {
+                        stage('Operator') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('Integration') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                    }
+                }
+                stage('Device Security') {
                     steps {
                         echo 'Hello world!' 
                     }
