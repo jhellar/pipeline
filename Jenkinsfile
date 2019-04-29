@@ -1,17 +1,17 @@
 pipeline {
     agent none
     stages {
-        stage('MDC operator') { steps { echo 'Hello world!' } }
-        stage('Services') {
+        stage('MDC operator test') { steps { echo 'Hello world!' } }
+        stage('Services tests') {
             parallel {
                 stage('MDC') {
                     stages {
-                        stage('API') {
+                        stage('API test') {
                             steps {
                                 echo 'Hello world!' 
                             }
                         }
-                        stage('UI') {
+                        stage('UI test') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -20,7 +20,12 @@ pipeline {
                 }
                 stage('UPS') {
                     stages {
-                        stage('Integration') {
+                        stage('Operator test') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('Karma test') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -29,7 +34,12 @@ pipeline {
                 }
                 stage('SSO') {
                     stages {
-                        stage('Integration') {
+                        stage('Operator test') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('Appium test') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -38,7 +48,12 @@ pipeline {
                 }
                 stage('Metrics') {
                     stages {
-                        stage('Integration') {
+                        stage('Operator test') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('Karma test') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -47,7 +62,12 @@ pipeline {
                 }
                 stage('Sync') {
                     stages {
-                        stage('Integration') {
+                        stage('Operator test') {
+                            steps {
+                                echo 'Hello world!' 
+                            }
+                        }
+                        stage('Karma test') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -56,7 +76,7 @@ pipeline {
                 }
                 stage('Security') {
                     stages {
-                        stage('Integration') {
+                        stage('Karma test') {
                             steps {
                                 echo 'Hello world!' 
                             }
@@ -65,19 +85,19 @@ pipeline {
                 }
             }
         }
-        stage('Services + Metrics') {
+        stage('Services + Metrics tests') {
             parallel {
-                stage('SSO') {
+                stage('SSO test') {
                     steps {
                         echo 'Hello world!' 
                     }
                 }
-                stage('Security') {
+                stage('Security test') {
                     steps {
                         echo 'Hello world!' 
                     }
                 }
-                stage('Sync') {
+                stage('Sync test') {
                     steps {
                         echo 'Hello world!' 
                     }
